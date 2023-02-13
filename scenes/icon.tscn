@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://rymt0bu47qbw"]
+[gd_scene load_steps=3 format=3 uid="uid://rymt0bu47qbw"]
 
 [ext_resource type="Texture2D" uid="uid://chr83o3gw8vsl" path="res://icon.svg" id="1_x6apf"]
 
+[sub_resource type="GDScript" id="GDScript_ke03f"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	print(\"Hello, I'm \", name)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	rotate(delta)
+"
+
 [node name="Icon" type="Sprite2D"]
 texture = ExtResource("1_x6apf")
+script = SubResource("GDScript_ke03f")
